@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+</head>
+<body>
     <div class="navigation">
         <nav>
             <span>Make an Opinion</span>
@@ -11,21 +13,21 @@
     </div>
     <div class="main_content">
         <h1>Make your voice heard</h1>
-<!--        rules go here-->
+        <!--        rules go here-->
         <div class="rules">
             <h3>Rules: </h3>
             <p>Rules that Alex and the team want to put go here</p>
         </div>
-<!--        submission-->
+        <!--        submission-->
         <div class="content">
-            <input id="header" type="text" placeholder="Header/Title...">
-            <input id="subheader" type="text" placeholder="Subheader...">
-            <input id="body" type="text" placeholder="Your Opinion...">
+            <div class="input_boxes">
+                <input id="header" type="text" placeholder="Header/Title...">
+                <input id="subheader" type="text" placeholder="Subheader...">
+                <textarea id="body" type="text" placeholder="Your Opinion..."></textarea>
+                <input id="media" type="text" placeholder="Image or media link...">
+            </div>
             <button onclick="console.log('Going to the editor')">Choose an editor</button>
         </div>
     </div>
-</head>
-<body>
-
 </body>
 </html>
