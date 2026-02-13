@@ -27,8 +27,36 @@
                 <textarea id="body" placeholder="Your Opinion..."></textarea>
                 <input id="media" type="text" placeholder="Media links...">
             </div>
-            <button onclick="window.location.href='selecting_editor.html'">Choose an editor</button>
+            <button id="sumbit_button">Choose an editor</button>
         </div>
     </div>
+
+<!--    js code-->
+    <script>
+        //making the vars
+        const header = document.getElementById("header");
+        const subheader = document.getElementById("subheader");
+        const body = document.getElementById("body");
+        const button = document.getElementById("sumbit_button");
+
+        //if the items are not filled, then do not preceed to the next section
+        button.addEventListener("click", () => {
+            if (header.value.trim() === ""){
+                alert("Please enter a header!");
+                window.location.href = "#";
+            }
+            else if (subheader.value.trim() === ""){
+                alert("Please enter a subheader!");
+                window.location.href = "#";
+            }
+            else if (body.value.trim() === ""){
+                alert("Please enter a body!");
+                window.location.href = "#";
+            }
+            else{
+                window.location.href = "selecting_editor.html";
+            }
+        })
+    </script>
 </body>
 </html>
