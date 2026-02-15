@@ -25,8 +25,9 @@
 <!--button to send info-->
     <button class="editor_button" id="button">Send your Draft!!!</button>
     <script src="js/editor_page.js"></script>
+    <script src="config.js"></script>
     <script>
-        fetch("https://script.google.com/macros/s/AKfycbzL0q3bqZAHjgb7XGRltydzGtSqROkit0Q3J4jsyHmmzopF6qdf__TBdLdSbB_sG_A/exec")
+        fetch(CONFIG.appScript)
             .then(res => res.json())
             .then(editors => {
                 console.log(editors);
