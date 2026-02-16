@@ -1,3 +1,11 @@
+//getting the container and the loading system
+const container = document.getElementById("editors_container");
+const loader = document.getElementById("loading");
+
+//making the display
+loader.style.display = "block";
+container.style.display = "none";
+
 //fetches the api and starts praying that everything works
 fetch("https://script.google.com/macros/s/AKfycbzL0q3bqZAHjgb7XGRltydzGtSqROkit0Q3J4jsyHmmzopF6qdf__TBdLdSbB_sG_A/exec")
     .then(res =>
@@ -7,14 +15,14 @@ fetch("https://script.google.com/macros/s/AKfycbzL0q3bqZAHjgb7XGRltydzGtSqROkit0
     })
     .then(editors => {
         console.log(editors);
+        loader.style.display = "none";
+        container.style.display = "block";
         renderEditors(editors);
     })
     .catch(err => console.log("Something went wrong", err));
 
 //redering in all the eidtors
 function renderEditors(editors) {
-    const container = document.getElementById("editors_container");
-
     //for each editor, create a card
     editors.forEach(editor => {
         const card = document.createElement("div");
