@@ -7,20 +7,24 @@ const media = document.getElementById("media");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 
+//function that will check if its empty
+function isEmpty(document, placeholder){
+    //checking if the document is empty
+    if (document.value.trim() == ""){ //if it is, it will return true and will tell the user to enter a value
+        alert (`Please enter a ${placeholder}`);
+        return true;
+    }
+    return false;
+}
+
+
 //if the items are not filled, then do not preceed to the next section
 button.addEventListener("click", () => {
-    if (header.value.trim() === ""){
-        alert("Please enter a header!");
+    //checking if everything is filled
+    if ((isEmpty(name, "name")) || (isEmpty(email, "email")) || (isEmpty(header, "header")) || (isEmpty(subheader, "subheader")) || (isEmpty(body, "body")) ){
         window.location.href = "#";
     }
-    else if (subheader.value.trim() === ""){
-        alert("Please enter a subheader!");
-        window.location.href = "#";
-    }
-    else if (body.value.trim() === ""){
-        alert("Please enter a body!");
-        window.location.href = "#";
-    }
+    //everything is filled, proseeding to the next window
     else{
         //setting items into local storage
         localStorage.setItem("header", header.value);
