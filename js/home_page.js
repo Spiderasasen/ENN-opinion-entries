@@ -11,7 +11,7 @@ const email = document.getElementById("email");
 function isEmpty(document, placeholder){
     //checking if the document is empty
     if (document.value.trim() == ""){ //if it is, it will return true and will tell the user to enter a value
-        alert (`Please enter a ${placeholder}`);
+        alert (`Please enter ${placeholder}`);
         return true;
     }
     return false;
@@ -21,7 +21,7 @@ function isEmpty(document, placeholder){
 //if the items are not filled, then do not preceed to the next section
 button.addEventListener("click", () => {
     //checking if everything is filled
-    if ((isEmpty(name, "name")) || (isEmpty(email, "email")) || (isEmpty(header, "header")) || (isEmpty(subheader, "subheader")) || (isEmpty(body, "body")) ){
+    if ((isEmpty(name, "a name")) || (isEmpty(email, "an email")) || (isEmpty(header, "a header")) || (isEmpty(subheader, "a subheader")) || (isEmpty(body, "your opinion article")) || (isEmpty(media, "the media you will like to see")) ){
         window.location.href = "#";
     }
     //everything is filled, proseeding to the next window
