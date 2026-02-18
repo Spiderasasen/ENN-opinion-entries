@@ -4,6 +4,8 @@ const subheader = document.getElementById("subheader");
 const body = document.getElementById("body");
 const button = document.getElementById("sumbit_button");
 const media = document.getElementById("media");
+const name = document.getElementById("name");
+const email = document.getElementById("email");
 
 //if the items are not filled, then do not preceed to the next section
 button.addEventListener("click", () => {
@@ -25,6 +27,8 @@ button.addEventListener("click", () => {
         localStorage.setItem("subheader", subheader.value);
         localStorage.setItem("media", media.value);
         localStorage.setItem("body", body.value);
+        localStorage.setItem("name", name.value);
+        localStorage.setItem("email", email.value);
 
         //going to the next screen
         window.location.href = "selecting_editor.html";
