@@ -12,13 +12,16 @@ const submissionData = {
 }
 
 //button job
-button.addEventListener("click", () => {
+button.addEventListener("click", async() => {
 
     const response = fetch("/api/send", {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify({submissionData})
     });
+
+    const result = await response.json();
+    console.log("Server response:", result);
 
     //telling the user who they selected
     alert(`We've sent your documents to Diaz: ddiaz11@elon.edu`);
