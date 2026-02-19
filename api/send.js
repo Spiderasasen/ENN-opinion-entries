@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         const { name, email, header, subheader, body, media } = data;
         const emailPayload = {
             from: "onboarding@resend.dev",
-            to: "ddiaz11@elon.edu",
+            to: "spiderasasen@gmail.com",
             subject: `New Opinion Submission from ${name}`,
             text:`
                 User: 
