@@ -10,7 +10,7 @@ const name = localStorage.getItem("name");
 const email = localStorage.getItem("email");
 
 // getting the forms section
-const formURL = "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=bTIYuh9x4kqGgWEVSTp6UwZTuf1pk8tDqwbdQB_E9NNUOVVJMUFJN1ZWNkNQNjVMN0VTUFhVSlU2Ry4u"
+const formURL = "https://forms.cloud.microsoft/r/0zR72B8BX2"
 const data = new FormData();
 
 //button job
