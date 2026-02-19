@@ -15,7 +15,7 @@ export default async function handler(req, res) {
             subject: `New Opinion Submission from ${name}`,
             text:`
                 User: 
-                ${name}, ${email}
+                ${name}; ${email}
                 
                 Header for the Opinion Submission Article 
                 ${header},
