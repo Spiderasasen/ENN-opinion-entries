@@ -1,7 +1,7 @@
 //getting the key
 const apiKey = process.env.RESEND_API_KEY;
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
     if (req.method === "POST") {
         //checking if the info was received
         const data = req.body;
@@ -31,7 +31,24 @@ export default function handler(req, res) {
             `
         }
 
-        return res.status(200).json({ message: "Email Sent!!"});
+        //sending the email
+        const response = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${apiKey}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(emailPayload),
+        })
+
+        const result = await response.json();
+
+        //if an error happens when the email is being sent
+        if (!response.ok) {
+            return res.status(500).json({ error: result });
+        }
+
+        return res.status(200).json({ message: "Email Sent!!", id: result.id});
     }
 
     return res.status(405).json({ message: "Method not allowed" });
