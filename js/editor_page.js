@@ -17,7 +17,7 @@ button.addEventListener("click", async() => {
     const response = await fetch("/api/send", {
         method: "POST",
         headers: {"content-type": "application/json"},
-        body: JSON.stringify({submissionData})
+        body: JSON.stringify(submissionData)
     });
 
     const result = await response.json();
