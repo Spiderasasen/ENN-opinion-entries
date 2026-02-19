@@ -14,7 +14,7 @@ const submissionData = {
 //button job
 button.addEventListener("click", async() => {
 
-    const response = fetch("/api/send", {
+    const response = await fetch("/api/send", {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify({submissionData})
