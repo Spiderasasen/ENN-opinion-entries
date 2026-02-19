@@ -1,3 +1,6 @@
+//getting the key
+const apiKey = process.env.RESEND_API_KEY;
+
 export default function handler(req, res) {
     if (req.method === "POST") {
         const data = req.body;
