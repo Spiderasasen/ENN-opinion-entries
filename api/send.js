@@ -1,5 +1,5 @@
 //getting the key
-const apiKey = process.env.RESEND_API_KEY;
+const apiKey = process.env.RESEND_API_LEY;
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
