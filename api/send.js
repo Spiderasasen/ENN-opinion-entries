@@ -6,6 +6,7 @@ export default function handler(req, res) {
         const data = req.body;
         console.log("Received:", data);
         return res.status(200).json({ message: "Success", received: data });
+        console.log(apiKey)
     }
 
     return res.status(405).json({ message: "Method not allowed" });
