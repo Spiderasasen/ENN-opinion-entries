@@ -6,10 +6,12 @@ const header = localStorage.getItem("header");
 const subheader = localStorage.getItem("subheader");
 const media = localStorage.getItem("media");
 const body = localStorage.getItem("body");
+const name = localStorage.getItem("name");
+const email = localStorage.getItem("email");
 
 //button job
 button.addEventListener("click", () => {
-    alert("clicked!")
+    alert(`We've sent your documents to Diaz: ddiaz11@elon.edu`)
     localStorage.clear();
     console.log(localStorage);
     window.location.href = "index.html";
