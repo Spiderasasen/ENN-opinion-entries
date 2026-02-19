@@ -13,14 +13,15 @@ const submissionData = {
 
 //button job
 button.addEventListener("click", () => {
-    //telling the user who they selected
-    alert(`We've sent your documents to Diaz: ddiaz11@elon.edu`);
 
     const response = fetch("/api/send", {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify({submissionData})
     });
+
+    //telling the user who they selected
+    alert(`We've sent your documents to Diaz: ddiaz11@elon.edu`);
 
     //clearing the storage and sending the user back to the home page
     localStorage.clear();
