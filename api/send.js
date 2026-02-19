@@ -9,5 +9,6 @@ export default function handler(req, res) {
         return res.status(200).json({ message: "Success", received: data });
     }
 
+    //not allowed to be entered
     return res.status(405).json({ message: "Method not allowed" });
 }
