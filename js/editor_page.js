@@ -2,17 +2,25 @@
 const button = document.getElementById("button");
 
 //grabbing elements from the local stroage
-const header = localStorage.getItem("header");
-const subheader = localStorage.getItem("subheader");
-const media = localStorage.getItem("media");
-const body = localStorage.getItem("body");
-const name = localStorage.getItem("name");
-const email = localStorage.getItem("email");
+const submissionData = {
+    "name": localStorage.getItem("name"),
+    "email": localStorage.getItem("email"),
+    "header": localStorage.getItem("header"),
+    "subheader": localStorage.getItem("subheader"),
+    "body": localStorage.getItem("body"),
+    "media": localStorage.getItem("media")
+}
 
 //button job
 button.addEventListener("click", () => {
     //telling the user who they selected
     alert(`We've sent your documents to Diaz: ddiaz11@elon.edu`);
+
+    const response = fetch("/api/send", {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({submissionData})
+    });
 
     //clearing the storage and sending the user back to the home page
     localStorage.clear();
