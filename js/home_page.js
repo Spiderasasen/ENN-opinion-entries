@@ -27,12 +27,12 @@ button.addEventListener("click", () => {
     //everything is filled, proseeding to the next window
     else{
         //setting items into local storage
+        localStorage.setItem("name", name.value);
+        localStorage.setItem("email", email.value);
         localStorage.setItem("header", header.value);
         localStorage.setItem("subheader", subheader.value);
         localStorage.setItem("media", media.value);
         localStorage.setItem("body", body.value);
-        localStorage.setItem("name", name.value);
-        localStorage.setItem("email", email.value);
 
         //going to the next screen
         window.location.href = "selecting_editor.html";
