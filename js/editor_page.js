@@ -26,7 +26,7 @@ button.addEventListener("click", async() => {
     console.log("Server response:", result);
 
     //telling the user who they selected
-    alert(`We've sent your documents to Diaz: ddiaz11@elon.edu`);
+    alert(`Your submission has been sent to ${submissionData.editor_name} (${submissionData.editor_email})\n They’ll reach out to you when they’re ready to begin reviewing your draft.`);
 
     //clearing the storage and sending the user back to the home page
     localStorage.clear();
