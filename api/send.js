@@ -8,25 +8,29 @@ export default async function handler(req, res) {
         console.log("Received:", data);
 
         //making the email
-        const { name, email, header, subheader, body, media } = data;
+        const { name, email, header, subheader, body, media, editor_email, editor_name } = data;
         const emailPayload = {
             from: "onboarding@resend.dev",
             to: "spiderasasen@gmail.com",
             subject: `New Opinion Submission from ${name}`,
             text:`
-                User: 
-                ${name}; ${email}
+                This submission is intended for: ${editor_name} (${editor_email})
+                If you received this message in error, please forward it to the correct editor or notify the sender.
+            
+                Submitted By:
+                Name: ${name}
+                Email: ${email}
                 
-                Header for the Opinion Submission Article 
-                ${header},
+                Article Header:
+                ${header}
                 
-                Subheader for the Opinion Submission Article 
-                ${subheader},
+                Article Subheader:
+                ${subheader}
                 
-                Media ${name} would like to have included in the Article: 
+                Media Requested:
                 ${media}
                 
-                Main Draft:
+                Draft Content:
                 ${body}
             `
         }

@@ -8,7 +8,9 @@ const submissionData = {
     "header": localStorage.getItem("header"),
     "subheader": localStorage.getItem("subheader"),
     "body": localStorage.getItem("body"),
-    "media": localStorage.getItem("media")
+    "media": localStorage.getItem("media"),
+    "editor_email": localStorage.getItem("selectedEmail"),
+    "editor_name": localStorage.getItem("selectedName"),
 }
 
 //button job
