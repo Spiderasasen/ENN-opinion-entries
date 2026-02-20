@@ -36,10 +36,26 @@ function renderEditors(editors) {
             </div>
         `;
 
+        //remembering the selected editor
+        if(editor.Name === localStorage.getItem("selectedName")){
+            card.classList.add("selected");
+        }
+
         //grabs the info from local stroage to add it to the editor name, discription and emil
         card.addEventListener("click", () => {
+            //removing the selected hue on all cards
+            document.querySelectorAll(".editor-card").forEach(c => {
+                c.classList.remove("selected");
+            });
+
+            //add all information into the right section
+            card.classList.add("selected");
             localStorage.setItem("selectedName", editor.Name);
             localStorage.setItem("selectedEmail", editor.Email);
+
+            //showing me the selected console log
+            console.log("Name: ", localStorage.getItem("selectedName"));
+            console.log("Email: ", localStorage.getItem("selectedEmail"));
         });
 
         container.appendChild(card);
