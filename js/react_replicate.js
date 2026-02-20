@@ -36,6 +36,8 @@ function renderEditors(editors) {
             </div>
         `;
 
+        const innerCard = card.querySelector(".editor-card");
+
         //remembering the selected editor
         if(editor.Name === localStorage.getItem("selectedName")){
             card.classList.add("selected");
@@ -49,7 +51,7 @@ function renderEditors(editors) {
             });
 
             //add all information into the right section
-            card.classList.add("selected");
+            innerCard.classList.add("selected");
             localStorage.setItem("selectedName", editor.Name);
             localStorage.setItem("selectedEmail", editor.Email);
 
