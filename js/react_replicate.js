@@ -40,7 +40,7 @@ function renderEditors(editors) {
 
         //remembering the selected editor
         if(editor.Name === localStorage.getItem("selectedName")){
-            card.classList.add("selected");
+            innerCard.classList.add("selected");
         }
 
         //grabs the info from local stroage to add it to the editor name, discription and emil
