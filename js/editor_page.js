@@ -1,20 +1,21 @@
 //grabing elements from the webpage
 const button = document.getElementById("button");
 
-//grabbing elements from the local stroage
-const submissionData = {
-    "name": localStorage.getItem("name"),
-    "email": localStorage.getItem("email"),
-    "header": localStorage.getItem("header"),
-    "subheader": localStorage.getItem("subheader"),
-    "body": localStorage.getItem("body"),
-    "media": localStorage.getItem("media"),
-    "editor_email": localStorage.getItem("selectedEmail"),
-    "editor_name": localStorage.getItem("selectedName"),
-}
 
 //button job
 button.addEventListener("click", async() => {
+
+    //grabbing elements from the local stroage
+    const submissionData = {
+        "name": localStorage.getItem("name"),
+        "email": localStorage.getItem("email"),
+        "header": localStorage.getItem("header"),
+        "subheader": localStorage.getItem("subheader"),
+        "body": localStorage.getItem("body"),
+        "media": localStorage.getItem("media"),
+        "editor_email": localStorage.getItem("selectedEmail"),
+        "editor_name": localStorage.getItem("selectedName"),
+    }
 
     const response = await fetch("/api/send", {
         method: "POST",
